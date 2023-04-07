@@ -4,9 +4,9 @@ interface Props {
     children?: ReactNode
 }
 const AgeContextProvider = ({ children, ...props }: Props) => {
-    const [Age, setAge] = useState('')
+    const [age, setAge] = useState('')
     return (
-        <AgeContext.Provider value={{ Age, setAge }}>
+        <AgeContext.Provider value={{ age, setAge }}>
             {children}
         </AgeContext.Provider>
     )

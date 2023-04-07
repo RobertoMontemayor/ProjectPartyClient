@@ -6,16 +6,21 @@ import reportWebVitals from './reportWebVitals'
 import { ThemeProvider } from '@mui/system'
 import { theme } from './assets/theme'
 import { CssBaseline } from '@mui/material'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Root from './components/root.component'
+import { Products } from './components/products.component'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <App>
         <React.StrictMode>
-            <ThemeProvider theme={theme}>
-                <CssBaseline>
-                    <BrowserRouter></BrowserRouter>
-                </CssBaseline>
-            </ThemeProvider>
+            <CssBaseline>
+                <BrowserRouter>
+                    <Root />
+                    <Routes>
+                        <Route path="/Products" element={<Products />}></Route>
+                    </Routes>
+                </BrowserRouter>
+            </CssBaseline>
         </React.StrictMode>
     </App>
 )
